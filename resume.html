@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Resume - Pratha Kaushik</title>
+    <style>
+        :root{
+            --accent:#faba0b;
+            --muted:#f4f6f8;
+            --text:#222;
+            --light:#666;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background: #1082f5;
+            padding: 24px;
+            color: var(--text);
+        }
+        .resume {
+            max-width: 800px;
+            margin: 0 auto;
+            background:white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 20px;
+        }
+        .header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:16px;
+            border-bottom:4px solid var(--muted);
+            padding-bottom:12px;
+        }
+        .name {
+            font-size:28px;
+            font-weight:700;
+            color:var(--accent);
+        }
+        .meta { font-size:13px; color:var(--light); }
+        .photo{
+            width:88px;
+            height:88px;
+            background:#ddd;
+            border-radius:6px;
+            display:inline-block;
+            object-fit:cover;
+        }
+
+        section { margin-top:16px; }
+        h3 {
+            margin:8px 0;
+            font-size:14px;
+            background:var(--muted);
+            padding:8px;
+            color:#333;
+            letter-spacing:0.3px;
+        }
+
+        .objective p { margin:10px 0; color:var(--light); }
+
+        table {
+            width:100%;
+            border-collapse:collapse;
+            margin-top:8px;
+            font-size:14px;
+        }
+        table thead td { font-weight:700; color:#444; padding:8px 6px; background: #fafafa; border-bottom:1px solid #eee; }
+        table tbody td { padding:8px 6px; border-bottom:1px dashed #f0f0f0; color:var(--light); }
+
+        ul { margin:8px 0 0 18px; color:var(--light); }
+        .two-cols { display:flex; gap:20px; flex-wrap:wrap; }
+        .col { flex:1 1 220px; }
+
+        .personal table td:first-child { width:40%; color:#333; font-weight:600; }
+        .declaration { margin-top:12px; color:var(--light); font-size:13px; }
+
+        .footer {
+            margin-top:18px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            font-size:14px;
+        }
+
+        @media (max-width:520px){
+            .header{ flex-direction:column; align-items:flex-start; gap:12px; }
+            .photo { width:72px; height:72px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume" role="document">
+        <header class="header">
+            <div>
+                <div class="name">Pratha Kaushik</div>
+                <div class="meta">Web Devloper</div>
+                <div class="meta">A-10/110, habitch pachtatv, Gr. Noida</div>
+                <div class="meta">Mob: +91 9871389998  | Email: prathak2707@gmail.com</div>
+            </div>
+           
+        </header>
+
+        <section class="objective">
+            <h3>CAREER OBJECTIVE</h3>
+            <p>To make contribution in the organization with best of my ability and also to develop new skills during the interaction to achieve new heights.</p>
+        </section>
+
+        <section>
+            <h3>ACADEMIC QUALIFICATION</h3>
+            <table aria-label="""Academic qualifications
+                <thead>
+                    <tr>
+                        <td>S.No.</td>
+                        <td>Qualification</td>
+                        <td>University / Board</td>
+                        <td>Year</td>
+                        <td>Per %</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>10th</td><td>CBSE Board</td><td>2023</td><td>91.5%</td></tr>
+                    <tr><td>2</td><td>12th</td><td>CBSE Board</td><td>2025</td><td>83%</td></tr>
+                    
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>OTHER QUALIFICATION</h3>
+            <ul>
+                <li>Basic Knowledge of C++,Java,Python</li>
+                <li>Advanced AI tools</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>WORK EXPERIENCE</h3>
+            <ul>
+                <li>1 Years of Experience as a Computer Operator in XYZ . Ltd Company</li>
+            </ul>
+        </section>
+
+        <section class="two-cols">
+            <div class="col personal">
+                <h3>PERSONAL INFORMATION</h3>
+                <table aria-label="Personal information">
+                    <tbody>
+                        <tr><td>Father's Name</td><td>Ashutosh Kaushik</td></tr>
+                        <tr><td>Date of Birth</td><td>27/01/2007</td></tr>
+                        <tr><td>Language Known</td><td>Hindi and English</td></tr>
+                        <tr><td>Gender</td><td>Female</td></tr>
+                        <tr><td>Nationality</td><td>Indian</td></tr>
+                        <tr><td>Marital Status</td><td>Unmarried</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col">
+                <h3>DECLARATION</h3>
+                <p class="declaration">I hereby declare that the information given above is true to the best of my knowledge and belief.</p>
+                <div class="footer">
+                    <div>Date: _____14/11/2025_____</div>
+                    <div>Place: Ghazibad</div>
+                </div>
+                <div style="text-align:right; margin-top:14px; font-weight:700;">(Pratha Kaushik)</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html></div>">
