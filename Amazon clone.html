@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Clone with Images</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f3f3f3;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #131921;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar h1 {
+            color: orange;
+            margin: 0;
+        }
+
+        /* Products */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .box {
+            background-color: white;
+            width: 220px;
+            padding: 15px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        button {
+            background-color: orange;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background-color: darkorange;
+        }
+
+        /* Cart Section */
+        .cart-section {
+            background-color: white;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background-color: #232f3e;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Amazon</h1>
+        <div>Cart 🛒: <span id="cart-count">0</span></div>
+    </div>
+
+    <!-- Products -->
+    <div class="products">
+
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Mobile">
+            <h3>Mobile</h3>
+            <p>₹10000</p>
+            <button onclick="addToCart('Mobile',10000)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" alt="Laptop">
+            <h3>Laptop</h3>
+            <p>₹50000</p>
+            <button onclick="addToCart('Laptop',50000)">Add to Cart</button>
+        </div>
+
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1a1" alt="Headphones">
+            <h3>Headphones</h3>
+            <p>₹2000</p>
+            <button onclick="addToCart('Headphones',2000)">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <!-- Cart Section -->
+    <div class="cart-section">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <h3>Total: ₹<span id="total-price">0</span></h3>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2026 Amazon Clone | Practice Project
+    </div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function updateCart() {
+    const cartItems = document.getElementById("cart-items");
+    const cartCount = document.getElementById("cart-count");
+    const totalPrice = document.getElementById("total-price");
+
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price;
+
+        const li = document.createElement("li");
+        li.innerHTML = `${item.name} - ₹${item.price} 
+            <button onclick="removeFromCart(${index})">Remove</button>`;
+        cartItems.appendChild(li);
+    });
+
+    cartCount.innerText = cart.length;
+    totalPrice.innerText = total;
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    updateCart();
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+updateCart();
+
+</script>
+
+</body>
+</html>
